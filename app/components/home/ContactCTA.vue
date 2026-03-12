@@ -84,12 +84,17 @@ const form = reactive({
 async function handleSubmit() {
   loading.value = true
 
-  // TODO: Replace with actual API endpoint (server/api/contact.post.ts or external service)
-  await new Promise(resolve => setTimeout(resolve, 1000))
-
-  addToast('Message sent! We\'ll get back to you within 24 hours.', 'success')
-
-  Object.assign(form, { name: '', email: '', business: '', website: '', message: '' })
-  loading.value = false
+  try {
+    await $fetch('/api/contact', {
+      method: 'POST',
+      body: form
+    })
+    addToast('Message sent! We\'ll get back to you within 24 hours.', 'success')
+    Object.assign(form, { name: '', email: '', business: '', website: '', message: '' })
+  } catch {
+    addToast('Something went wrong. Please try again or email us directly.', 'error')
+  } finally {
+    loading.value = false
+  }
 }
 </script>

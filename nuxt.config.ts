@@ -36,10 +36,11 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       title: '7clicks',
       meta: [
-        { name: 'description', content: '7clicks - Professional Development and AI Engineering' },
-        { name: 'theme-color', content: '#570df8' }
+        { name: 'description', content: '7clicks — Modern websites for local businesses. Live preview in 48 hours. Starting at $500.' },
+        { name: 'theme-color', content: '#3b82f6' }
       ],
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
     },

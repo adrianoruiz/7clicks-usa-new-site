@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+/* ─── Custom Fonts (Satoshi + General Sans from Fontshare) ──── */
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@700,900&f[]=general-sans@400,500,600&display=swap");
+
+/* ─── Font families via Tailwind v4 theme ───────────────────── */
+@theme {
+  --font-display: 'Satoshi', sans-serif;
+  --font-body: 'General Sans', sans-serif;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+  body {
+    font-family: var(--font-body);
+  }
+}
+
 /* ─── daisyUI ───────────────────────────────────────────────────── */
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark;
@@ -38,3 +56,18 @@
 .layout-leave-to {
   opacity: 0;
 }
+
+/* ─── Scroll animations ─────────────────────────────────────── */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-animate.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scroll-animate.delay-100 { transition-delay: 0.1s; }
+.scroll-animate.delay-200 { transition-delay: 0.2s; }
+.scroll-animate.delay-300 { transition-delay: 0.3s; }
+.scroll-animate.delay-400 { transition-delay: 0.4s; }

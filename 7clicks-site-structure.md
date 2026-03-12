@@ -398,17 +398,23 @@ font-family: 'JetBrains Mono', monospace;
 | Done | Nuxt 4 boilerplate, layout, navbar, footer, theme toggle, toast system |
 | Done | Drizzle + PostgreSQL setup, health API, server middleware |
 | Done | Docker + CI/deploy config |
-| **To build** | Home page sections (Hero, Problem/Solution, Services, Process, Portfolio, Social Proof, Contact CTA) |
-| **To build** | Portfolio pages (`/portfolio`, `/portfolio/[slug]`) |
-| **To build** | Pricing page with table + FAQ |
-| **To build** | About page |
-| **To build** | Contact page with form |
-| **To build** | Scroll animations / micro-interactions |
+| Done | Home page sections (Hero, Problem/Solution, Services, Process, Portfolio, Social Proof, Contact CTA) |
+| Done | Portfolio pages (`/portfolio`, `/portfolio/[slug]`) |
+| Done | Pricing page with table + FAQ |
+| Done | About page |
+| Done | Contact page with form |
+| Done | Scroll animations / micro-interactions |
+| Done | SEO meta tags per page (useSeoMeta in all pages) |
+| Done | Custom fonts (Satoshi + General Sans via Fontshare) |
+| Done | Form submission endpoint (`server/api/contact.post.ts`) |
+| Done | Favicon (SVG) + public directory |
 | **To build** | i18n (EN/PT-BR) |
-| **To build** | SEO meta tags per page |
-| **To decide** | Form submission strategy (server API route vs external service) |
+| **To build** | OG image (`/public/og-image.png`) |
+| **To build** | Deploy to Hostinger VPS |
+| **To build** | PageSpeed optimization (target: 95+) |
 | **To decide** | Analytics provider |
 | **To decide** | CMS for case studies |
+| **To decide** | Email service integration (Resend/Formspree for contact form) |
 
 ---
 
@@ -453,27 +459,27 @@ useSeoMeta({
 - [x] Vitest + ESLint setup
 
 ### Phase 2: Home Page Sections
-- [ ] HeroSection — bold, typography-driven, animated background
-- [ ] ProblemSolution — before/after visual contrast
-- [ ] ServicesGrid — 3 cards with pricing
-- [ ] ProcessTimeline — 4 steps, visual
-- [ ] ContactCTA — split layout, form + copy
+- [x] HeroSection — bold, typography-driven, animated background
+- [x] ProblemSolution — before/after visual contrast
+- [x] ServicesGrid — 3 cards with pricing
+- [x] ProcessTimeline — 4 steps, visual
+- [x] ContactCTA — split layout, form + copy
 - [ ] Deploy to Hostinger VPS (get live URL early)
 
 ### Phase 3: Inner Pages
-- [ ] Portfolio showcase grid on home
-- [ ] `/portfolio` page with project cards
-- [ ] `/portfolio/[slug]` case study pages
-- [ ] `/pricing` with table + FAQ accordion
-- [ ] `/about` — minimal, process-focused
-- [ ] `/contact` — dedicated form page
+- [x] Portfolio showcase grid on home
+- [x] `/portfolio` page with project cards
+- [x] `/portfolio/[slug]` case study pages
+- [x] `/pricing` with table + FAQ accordion
+- [x] `/about` — minimal, process-focused
+- [x] `/contact` — dedicated form page
 
 ### Phase 4: Polish & Launch
-- [ ] Scroll animations + micro-interactions
-- [ ] SEO meta tags + OG images per page
+- [x] Scroll animations + micro-interactions
+- [x] SEO meta tags + OG images per page
 - [ ] PageSpeed optimization (target: 95+)
-- [ ] Custom fonts (Satoshi + General Sans)
-- [ ] Form submission endpoint (`server/api/contact.post.ts`)
+- [x] Custom fonts (Satoshi + General Sans)
+- [x] Form submission endpoint (`server/api/contact.post.ts`)
 
 ### Phase 5: Growth
 - [ ] i18n (EN/PT-BR toggle)

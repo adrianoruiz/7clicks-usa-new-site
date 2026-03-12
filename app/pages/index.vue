@@ -1,16 +1,34 @@
 <template>
   <div>
     <HomeHeroSection />
-    <HomeProblemSolution />
-    <HomeServicesGrid />
-    <HomeProcessTimeline />
-    <HomePortfolioShowcase />
-    <HomeSocialProof />
-    <HomeContactCTA />
+    <div class="scroll-animate">
+      <HomeProblemSolution />
+    </div>
+    <div class="scroll-animate delay-100">
+      <HomeServicesGrid />
+    </div>
+    <div class="scroll-animate">
+      <HomeProcessTimeline />
+    </div>
+    <div class="scroll-animate">
+      <HomePortfolioShowcase />
+    </div>
+    <div class="scroll-animate">
+      <HomeSocialProof />
+    </div>
+    <div class="scroll-animate">
+      <HomeContactCTA />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const { onMounted: initScrollAnimation } = useScrollAnimation()
+
+onMounted(() => {
+  initScrollAnimation()
+})
+
 useSeoMeta({
   title: '7clicks — Modern Websites for Local Businesses',
   ogTitle: '7clicks — Modern Websites for Local Businesses',

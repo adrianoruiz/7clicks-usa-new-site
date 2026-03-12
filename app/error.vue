@@ -13,7 +13,7 @@
         </p>
         <div class="card-actions mt-6">
           <button class="btn btn-primary" @click="handleError">
-            Back to home
+            {{ $t('error.backHome') }}
           </button>
         </div>
       </div>
@@ -25,18 +25,17 @@
 import type { NuxtError } from '#app'
 
 const props = defineProps<{ error: NuxtError }>()
+const { t } = useI18n()
 
-const title = computed(() => {
-  if (props.error?.statusCode === 404) return 'Page not found'
-  if (props.error?.statusCode === 403) return 'Access denied'
-  return 'Something went wrong'
+const errorCode = computed(() => {
+  const code = props.error?.statusCode
+  if (code === 404) return '404'
+  if (code === 403) return '403'
+  return '500'
 })
 
-const description = computed(() => {
-  if (props.error?.statusCode === 404) return 'The page you are looking for does not exist or has been moved.'
-  if (props.error?.statusCode === 403) return 'You do not have permission to access this resource.'
-  return 'An unexpected error occurred. Please try again later.'
-})
+const title = computed(() => t(`error.${errorCode.value}.title`))
+const description = computed(() => t(`error.${errorCode.value}.description`))
 
 const handleError = () => clearError({ redirect: '/' })
 </script>

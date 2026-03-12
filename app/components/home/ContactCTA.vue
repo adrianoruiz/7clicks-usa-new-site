@@ -5,20 +5,19 @@
         <!-- Left: Copy -->
         <div class="space-y-6">
           <h2 class="text-3xl sm:text-4xl font-bold leading-tight">
-            Ready to see what your new website looks like?
+            {{ $t('contactCTA.title') }}
           </h2>
           <p class="text-neutral-content/70 text-lg leading-relaxed">
-            Tell us about your business. We'll build a free live preview in 48 hours.
-            No commitment, no credit card.
+            {{ $t('contactCTA.subtitle') }}
           </p>
           <div class="space-y-4 pt-4">
             <div class="flex items-center gap-3 text-neutral-content/60">
               <Mail :size="18" class="text-primary" />
-              <span>hello@7clicks.dev</span>
+              <span>{{ $t('contactCTA.email') }}</span>
             </div>
             <div class="flex items-center gap-3 text-neutral-content/60">
               <Clock :size="18" class="text-primary" />
-              <span>We respond within 24 hours</span>
+              <span>{{ $t('contactCTA.responseTime') }}</span>
             </div>
           </div>
         </div>
@@ -29,33 +28,33 @@
             <form @submit.prevent="handleSubmit">
               <fieldset class="fieldset space-y-4" :disabled="loading">
                 <div>
-                  <label class="label"><span class="text-sm font-medium">Name</span></label>
-                  <input v-model="form.name" type="text" placeholder="John Smith"
+                  <label class="label"><span class="text-sm font-medium">{{ $t('contactCTA.form.name') }}</span></label>
+                  <input v-model="form.name" type="text" :placeholder="$t('contactCTA.form.namePlaceholder')"
                          class="input input-bordered w-full" required />
                 </div>
                 <div>
-                  <label class="label"><span class="text-sm font-medium">Email</span></label>
-                  <input v-model="form.email" type="email" placeholder="john@business.com"
+                  <label class="label"><span class="text-sm font-medium">{{ $t('contactCTA.form.email') }}</span></label>
+                  <input v-model="form.email" type="email" :placeholder="$t('contactCTA.form.emailPlaceholder')"
                          class="input input-bordered w-full" required />
                 </div>
                 <div>
-                  <label class="label"><span class="text-sm font-medium">Business Name</span></label>
-                  <input v-model="form.business" type="text" placeholder="Your business name"
+                  <label class="label"><span class="text-sm font-medium">{{ $t('contactCTA.form.business') }}</span></label>
+                  <input v-model="form.business" type="text" :placeholder="$t('contactCTA.form.businessPlaceholder')"
                          class="input input-bordered w-full" required />
                 </div>
                 <div>
-                  <label class="label"><span class="text-sm font-medium">Current Website URL <span class="text-base-content/40">(optional)</span></span></label>
+                  <label class="label"><span class="text-sm font-medium">{{ $t('contactCTA.form.website') }} <span class="text-base-content/40">{{ $t('contactCTA.form.optional') }}</span></span></label>
                   <input v-model="form.website" type="url" placeholder="https://..."
                          class="input input-bordered w-full" />
                 </div>
                 <div>
-                  <label class="label"><span class="text-sm font-medium">Message</span></label>
-                  <textarea v-model="form.message" placeholder="Tell us about your business and what you need..."
+                  <label class="label"><span class="text-sm font-medium">{{ $t('contactCTA.form.message') }}</span></label>
+                  <textarea v-model="form.message" :placeholder="$t('contactCTA.form.messagePlaceholder')"
                             class="textarea textarea-bordered w-full h-24" />
                 </div>
                 <button type="submit" class="btn btn-primary btn-block mt-2" :class="{ 'btn-disabled': loading }">
                   <span v-if="loading" class="loading loading-spinner loading-sm" />
-                  {{ loading ? 'Sending...' : 'Get My Free Preview' }}
+                  {{ loading ? $t('contactCTA.form.sending') : $t('contactCTA.form.submit') }}
                   <ArrowRight v-if="!loading" :size="16" />
                 </button>
               </fieldset>
@@ -70,6 +69,7 @@
 <script setup lang="ts">
 import { Mail, Clock, ArrowRight } from 'lucide-vue-next'
 
+const { t } = useI18n()
 const { addToast } = useToast()
 
 const loading = ref(false)
@@ -89,10 +89,10 @@ async function handleSubmit() {
       method: 'POST',
       body: form
     })
-    addToast('Message sent! We\'ll get back to you within 24 hours.', 'success')
+    addToast(t('contactCTA.toast.success'), 'success')
     Object.assign(form, { name: '', email: '', business: '', website: '', message: '' })
   } catch {
-    addToast('Something went wrong. Please try again or email us directly.', 'error')
+    addToast(t('contactCTA.toast.error'), 'error')
   } finally {
     loading.value = false
   }

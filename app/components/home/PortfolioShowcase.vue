@@ -2,9 +2,9 @@
   <section id="portfolio" class="py-20 px-6 bg-base-200">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-bold">Our work.</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold">{{ $t('portfolioShowcase.title') }}</h2>
         <p class="mt-4 text-base-content/60 text-lg max-w-xl mx-auto">
-          Real results for real businesses. Every site is custom-built, fast, and mobile-first.
+          {{ $t('portfolioShowcase.subtitle') }}
         </p>
       </div>
 
@@ -19,19 +19,19 @@
             <!-- Hover overlay -->
             <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span class="text-primary-content font-medium text-sm flex items-center gap-2">
-                View Project <ArrowUpRight :size="16" />
+                {{ $t('portfolioShowcase.viewProject') }} <ArrowUpRight :size="16" />
               </span>
             </div>
           </figure>
           <div class="card-body p-5">
             <h3 class="font-semibold text-lg">{{ project.name }}</h3>
-            <p class="text-base-content/50 text-sm">{{ project.type }} &middot; {{ project.location }}</p>
+            <p class="text-base-content/50 text-sm">{{ $t(`portfolio.projects.${project.slug}.type`) }} &middot; {{ project.location }}</p>
             <div class="flex items-center gap-2 mt-3">
               <div class="badge badge-success badge-sm gap-1">
                 <Gauge :size="12" />
                 PageSpeed {{ project.score }}
               </div>
-              <div class="badge badge-outline badge-sm">{{ project.tag }}</div>
+              <div class="badge badge-outline badge-sm">{{ $t(`portfolio.projects.${project.slug}.tag`) }}</div>
             </div>
           </div>
         </NuxtLink>
@@ -39,7 +39,7 @@
 
       <div class="text-center mt-12">
         <NuxtLink to="/portfolio" class="btn btn-outline btn-primary">
-          View All Projects
+          {{ $t('portfolioShowcase.viewAll') }}
           <ArrowRight :size="16" />
         </NuxtLink>
       </div>

@@ -1,0 +1,353 @@
+{
+  "nav": {
+    "home": "Início",
+    "portfolio": "Portfólio",
+    "pricing": "Preços",
+    "about": "Sobre",
+    "contact": "Contato",
+    "getPreview": "Preview Grátis"
+  },
+  "hero": {
+    "badge": "Web Design para Negócios Locais",
+    "title": "Seu negócio merece um site que",
+    "titleHighlight": "realmente traz clientes.",
+    "subtitle": "Criamos e desenvolvemos sites de alta performance para negócios locais nos EUA e Europa. Preview ao vivo em 48 horas.",
+    "ctaWork": "Veja Nosso Trabalho",
+    "ctaPreview": "Preview Grátis",
+    "trustPageSpeed": "PageSpeed Média 95+",
+    "trustPreview": "Preview em 48h",
+    "trustDelivery": "Entrega em 5 Dias"
+  },
+  "problem": {
+    "label": "O Problema",
+    "title": "Seu site atual está",
+    "titleHighlight": "te fazendo perder clientes.",
+    "items": [
+      "Carregamento lento que afasta os visitantes",
+      "Design ultrapassado que não reflete sua marca",
+      "Não é mobile-friendly — perdendo metade do tráfego",
+      "Sem call to action claro — visitantes saem sem converter"
+    ]
+  },
+  "solution": {
+    "label": "A Solução",
+    "title": "Veja o que",
+    "titleHighlight": "nós construímos.",
+    "items": [
+      "Páginas ultra-rápidas — score 95+ no PageSpeed",
+      "Design moderno e limpo sob medida para seu negócio",
+      "Mobile-first — perfeito em qualquer dispositivo",
+      "Focado em conversão — cada elemento tem um propósito"
+    ]
+  },
+  "services": {
+    "title": "Preços simples e transparentes.",
+    "subtitle": "Sem taxas ocultas. Sem surpresas. Escolha o que se encaixa no seu negócio.",
+    "getStarted": "Começar",
+    "monthlyCare": "Cuidado Mensal:",
+    "monthlyDesc": "Hospedagem, atualizações e suporte —",
+    "monthlyPrice": "$29/mês",
+    "landing": {
+      "title": "Landing Page",
+      "description": "Perfeita para promoções e campanhas. Uma página focada e projetada para converter.",
+      "price": "$500",
+      "delivery": "3–5 dias"
+    },
+    "business": {
+      "title": "Site Empresarial",
+      "description": "Sua presença online completa. Até 5 páginas, design personalizado, SEO-ready.",
+      "price": "$800",
+      "delivery": "5–7 dias"
+    },
+    "premium": {
+      "title": "Premium",
+      "description": "Páginas ilimitadas, blog/CMS, recursos avançados. Para negócios prontos para escalar.",
+      "price": "Sob consulta",
+      "delivery": "10–14 dias"
+    }
+  },
+  "process": {
+    "title": "Como funciona.",
+    "subtitle": "Do primeiro contato ao lançamento — simples, rápido, sem compromisso até você estar satisfeito.",
+    "steps": [
+      {
+        "title": "Encontramos seu negócio",
+        "description": "Pesquisamos sua presença online e identificamos oportunidades de crescimento."
+      },
+      {
+        "title": "Construímos um preview",
+        "description": "Em 48 horas, você recebe uma preview ao vivo do seu novo site. Sem compromisso."
+      },
+      {
+        "title": "Você avalia e refinamos",
+        "description": "Nos dê seu feedback. Ajustamos até ficar perfeito para sua marca."
+      },
+      {
+        "title": "Lançamento e crescimento",
+        "description": "Seu site vai ao ar. Cuidamos da hospedagem, atualizações e suporte contínuo."
+      }
+    ]
+  },
+  "portfolioShowcase": {
+    "title": "Nosso trabalho.",
+    "subtitle": "Resultados reais para negócios reais. Cada site é feito sob medida, rápido e mobile-first.",
+    "viewProject": "Ver Projeto",
+    "viewAll": "Ver Todos os Projetos",
+    "viewCaseStudy": "Ver Case"
+  },
+  "stats": {
+    "pageSpeed": "Score Médio PageSpeed",
+    "preview": "Entrega do Preview",
+    "websites": "Sites Entregues",
+    "mobile": "Otimizado p/ Mobile"
+  },
+  "contactCTA": {
+    "title": "Pronto para ver como será seu novo site?",
+    "subtitle": "Conte-nos sobre seu negócio. Vamos criar um preview ao vivo grátis em 48 horas. Sem compromisso, sem cartão de crédito.",
+    "email": "hello@7clicks.dev",
+    "responseTime": "Respondemos em até 24 horas",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "João Silva",
+      "email": "Email",
+      "emailPlaceholder": "joao{'@'}empresa.com",
+      "business": "Nome da Empresa",
+      "businessPlaceholder": "Nome da sua empresa",
+      "website": "URL do Site Atual",
+      "optional": "(opcional)",
+      "message": "Mensagem",
+      "messagePlaceholder": "Conte-nos sobre seu negócio e o que você precisa...",
+      "submit": "Quero Meu Preview Grátis",
+      "sending": "Enviando..."
+    },
+    "toast": {
+      "success": "Mensagem enviada! Retornaremos em até 24 horas.",
+      "error": "Algo deu errado. Tente novamente ou envie um email diretamente."
+    }
+  },
+  "footer": {
+    "tagline": "Sites modernos para negócios locais. Rápidos, mobile-first, projetados para converter.",
+    "company": "Empresa",
+    "connect": "Conecte-se",
+    "copyright": "7clicks. Agência remota."
+  },
+  "about": {
+    "heroTitle": "Somos uma agência web remota obcecada por",
+    "heroHighlight": "velocidade e simplicidade.",
+    "mission1": "Construímos sites de alta performance para negócios locais nos EUA e Europa. Sem templates inchados. Sem page builders. Apenas código limpo e personalizado que carrega rápido e fica ótimo em qualquer dispositivo.",
+    "mission2": "Acreditamos que todo negócio local — de clínicas odontológicas a barbearias e restaurantes — merece um site que realmente traga clientes. Não apenas um cartão de visita digital, mas uma máquina de conversão.",
+    "values": {
+      "fastDelivery": {
+        "title": "Entrega Rápida",
+        "description": "Preview ao vivo em 48 horas. Site completo em 5-7 dias. Somos rápidos sem comprometer a qualidade."
+      },
+      "resultsFocused": {
+        "title": "Focados em Resultados",
+        "description": "Cada decisão de design é feita para ajudar seu negócio a conquistar mais clientes online."
+      },
+      "noBs": {
+        "title": "Sem Enrolação",
+        "description": "Preços transparentes. Sem contratos. Você vê o trabalho antes de pagar um centavo."
+      }
+    },
+    "techTitle": "Feito com tecnologia moderna",
+    "techDesc": "Todo site que construímos usa Nuxt, Vue e Tailwind CSS — a mesma stack por trás de alguns dos sites mais rápidos da internet. Sem WordPress. Sem Wix. Sem compromisso com performance.",
+    "ctaTitle": "Vamos construir algo incrível.",
+    "ctaSubtitle": "Veja como ficaria seu novo site — preview grátis em 48 horas.",
+    "ctaWork": "Veja Nosso Trabalho",
+    "ctaPreview": "Seu Preview Grátis",
+    "seo": {
+      "title": "Sobre — 7clicks",
+      "ogTitle": "7clicks — Sobre Nós",
+      "description": "Somos uma agência web remota que constrói sites de alta performance para negócios locais. Entrega rápida, tecnologia moderna, sem enrolação.",
+      "ogDescription": "Agência web remota obcecada por velocidade e simplicidade."
+    }
+  },
+  "contactPage": {
+    "heroTitle": "Vamos conversar.",
+    "heroSubtitle": "Conte-nos sobre seu negócio. Vamos criar um preview ao vivo grátis em 48 horas.",
+    "howItWorks": "Como funciona",
+    "howItWorksDesc": "Preencha o formulário e retornaremos em até 24 horas. Faremos algumas perguntas sobre seu negócio, e então construiremos um preview ao vivo que você pode ver e compartilhar — totalmente grátis.",
+    "emailDirect": "Envie-nos um email",
+    "responseTime": "Tempo de resposta",
+    "responseValue": "Em até 24 horas",
+    "remoteFirst": "Remoto-first",
+    "remoteDesc": "Atendendo negócios nos EUA e Europa",
+    "seo": {
+      "title": "Contato — 7clicks",
+      "ogTitle": "7clicks — Entre em Contato",
+      "description": "Receba um preview ao vivo grátis do seu novo site em 48 horas. Conte-nos sobre seu negócio e vamos começar.",
+      "ogDescription": "Preview ao vivo grátis em 48 horas. Sem compromisso, sem cartão de crédito."
+    }
+  },
+  "pricingPage": {
+    "heroTitle": "Preços simples e transparentes.",
+    "heroSubtitle": "Sem taxas ocultas. Sem surpresas. Você vê um preview ao vivo antes de pagar um centavo.",
+    "faqTitle": "Perguntas Frequentes",
+    "faqSubtitle": "Tudo que você precisa saber antes de começar.",
+    "ctaTitle": "Pronto para começar?",
+    "ctaSubtitle": "Conte-nos sobre seu negócio. Você terá um preview ao vivo em 48 horas.",
+    "ctaButton": "Seu Preview Grátis",
+    "seo": {
+      "title": "Preços — 7clicks",
+      "ogTitle": "7clicks — Preços Transparentes",
+      "description": "Landing pages a partir de $500, sites empresariais a partir de $800. Veja um preview ao vivo antes de pagar. Sem taxas ocultas.",
+      "ogDescription": "Landing pages a partir de $500, sites empresariais a partir de $800. Preview grátis em 48 horas."
+    }
+  },
+  "pricingTable": {
+    "mostPopular": "Mais Popular",
+    "getStarted": "Começar",
+    "monthlyCare": "Cuidado Mensal:",
+    "monthlyDesc": "Hospedagem, SSL, atualizações, edições menores, monitoramento —",
+    "monthlyPrice": "$29/mês",
+    "tiers": {
+      "landing": {
+        "name": "Landing Page",
+        "description": "Perfeita para promoções e campanhas.",
+        "price": "$500–$800",
+        "delivery": "3–5 dias"
+      },
+      "business": {
+        "name": "Site Empresarial",
+        "description": "Sua presença online completa.",
+        "price": "$800–$1.500",
+        "delivery": "5–7 dias"
+      },
+      "premium": {
+        "name": "Premium",
+        "description": "Para negócios prontos para escalar.",
+        "price": "Sob consulta",
+        "delivery": "10–14 dias"
+      }
+    },
+    "features": {
+      "1page": "1 página",
+      "5pages": "Até 5 páginas",
+      "unlimitedPages": "Páginas ilimitadas",
+      "mobileOptimized": "Otimizado p/ mobile",
+      "seoBasics": "SEO básico",
+      "contactForm": "Formulário de contato",
+      "customDesign": "Design personalizado",
+      "blogCms": "Blog / CMS",
+      "blogCmsPlus": "Blog / CMS (+$300)",
+      "blogCmsIncluded": "Blog / CMS incluso"
+    }
+  },
+  "faq": [
+    {
+      "question": "Pago antes de ver alguma coisa?",
+      "answer": "Não. Construímos um preview ao vivo grátis primeiro. Você só paga se amar o resultado e quiser colocar no ar."
+    },
+    {
+      "question": "Como faço o pagamento?",
+      "answer": "Via Wise ou PayPal. Transferência internacional simples — sem faturas complicadas."
+    },
+    {
+      "question": "Posso cancelar o Cuidado Mensal?",
+      "answer": "Sim, a qualquer momento. Sem contratos, sem taxas de cancelamento. Seu site continua sendo seu."
+    },
+    {
+      "question": "Vocês redesenham sites existentes?",
+      "answer": "Sim. Mesmo processo, mesmo preço. Reconstruímos seu site do zero com tecnologia e design modernos."
+    },
+    {
+      "question": "Qual tecnologia vocês usam?",
+      "answer": "Construímos com Nuxt, Vue e Tailwind CSS — modernos, rápidos e SEO-friendly. Sem WordPress, sem page builders."
+    },
+    {
+      "question": "Vocês oferecem suporte contínuo?",
+      "answer": "Sim, através do nosso plano Cuidado Mensal ($29/mês). Inclui hospedagem, SSL, atualizações, edições menores e monitoramento."
+    }
+  ],
+  "portfolioPage": {
+    "heroTitle": "Nosso Trabalho",
+    "heroSubtitle": "Resultados reais para negócios reais. Cada site é feito sob medida, rápido e mobile-first.",
+    "ctaTitle": "Quer resultados semelhantes?",
+    "ctaSubtitle": "Vamos criar um preview ao vivo grátis para seu negócio em 48 horas. Sem compromisso.",
+    "ctaButton": "Seu Preview Grátis",
+    "seo": {
+      "title": "Portfólio — 7clicks",
+      "ogTitle": "7clicks — Portfólio",
+      "description": "Veja nosso trabalho: sites de alta performance para negócios locais nos EUA e Europa.",
+      "ogDescription": "Resultados reais para negócios reais. Sites feitos sob medida, rápidos e mobile-first."
+    }
+  },
+  "caseStudy": {
+    "challenge": "O Desafio",
+    "solution": "Nossa Solução",
+    "results": "Resultados",
+    "screenshot": "Screenshot do site completo",
+    "notFound": "Projeto não encontrado",
+    "backToPortfolio": "Voltar ao Portfólio",
+    "ctaTitle": "Quer resultados semelhantes para seu negócio?",
+    "ctaSubtitle": "Receba um preview ao vivo grátis em 48 horas. Sem compromisso, sem cartão de crédito.",
+    "ctaButton": "Seu Preview Grátis"
+  },
+  "beforeAfter": {
+    "before": "Antes",
+    "after": "Depois",
+    "oldWebsite": "Site antigo",
+    "newWebsite": "Novo site 7clicks"
+  },
+  "error": {
+    "backHome": "Voltar ao início",
+    "404": {
+      "title": "Página não encontrada",
+      "description": "A página que você procura não existe ou foi movida."
+    },
+    "403": {
+      "title": "Acesso negado",
+      "description": "Você não tem permissão para acessar este recurso."
+    },
+    "500": {
+      "title": "Algo deu errado",
+      "description": "Ocorreu um erro inesperado. Tente novamente mais tarde."
+    }
+  },
+  "seo": {
+    "homeTitle": "7clicks — Sites Modernos para Negócios Locais",
+    "homeDescription": "Criamos e desenvolvemos sites de alta performance para negócios locais nos EUA e Europa. Preview ao vivo em 48 horas. A partir de $500.",
+    "homeOgDescription": "Sites feitos sob medida, rápidos e mobile-first. Preview ao vivo em 48 horas. A partir de $500."
+  },
+  "portfolio": {
+    "projects": {
+      "bright-smile-dental": {
+        "type": "Clínica Odontológica",
+        "tag": "Site Empresarial",
+        "challenge": "Site desatualizado com carregamento lento, sem otimização mobile e zero agendamentos online. Pacientes ligavam ou simplesmente iam para outro lugar.",
+        "solution": "Construímos um site limpo e moderno de 4 páginas com integração de agendamento online, design mobile-first e imagens otimizadas. Foco em sinais de confiança e calls to action claros.",
+        "results": [
+          "Score PageSpeed saltou de 34 para 98",
+          "Design mobile-friendly aumentou tráfego mobile em 60%",
+          "Formulário de agendamento online reduziu volume de ligações",
+          "Entregue em 5 dias desde o primeiro contato"
+        ]
+      },
+      "oak-street-barbershop": {
+        "type": "Barbearia",
+        "tag": "Landing Page",
+        "challenge": "Sem presença na web — dependendo inteiramente do Instagram e boca a boca. Perdendo potenciais clientes que buscam \"barbearia perto de mim.\"",
+        "solution": "Criamos uma landing page com serviços, preços, mapa de localização e um botão \"Agendar\" claro. Otimizado para SEO local.",
+        "results": [
+          "PageSpeed 96 em mobile e desktop",
+          "Apareceu nos resultados de busca local em 2 semanas",
+          "Design limpo que combina com a estética da marca",
+          "Entregue em 3 dias"
+        ]
+      },
+      "bella-cucina": {
+        "type": "Restaurante Italiano",
+        "tag": "Site Empresarial",
+        "challenge": "Tinha um site WordPress de 2018 — lento, poluído e o cardápio era um PDF borrado. Clientes não conseguiam encontrar horários ou localização facilmente.",
+        "solution": "Desenhamos um site de 3 páginas com um lindo cardápio digital, link de reserva e horários/localização em destaque. Layout focado em fotografia com tons quentes.",
+        "results": [
+          "PageSpeed melhorou de 41 para 97",
+          "Cardápio digital substituiu PDF — acessível em todos os dispositivos",
+          "Cliques em reservas aumentaram significativamente",
+          "Entregue em 4 dias"
+        ]
+      }
+    }
+  }
+}

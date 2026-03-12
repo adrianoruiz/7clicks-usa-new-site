@@ -1,0 +1,353 @@
+{
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "getPreview": "Get a Free Preview"
+  },
+  "hero": {
+    "badge": "Web Design for Local Businesses",
+    "title": "Your business deserves a website that",
+    "titleHighlight": "actually brings customers.",
+    "subtitle": "We design and build high-performance websites for local businesses across the US and Europe. Live preview in 48 hours.",
+    "ctaWork": "See Our Work",
+    "ctaPreview": "Get a Free Preview",
+    "trustPageSpeed": "Avg. PageSpeed 95+",
+    "trustPreview": "48h Live Preview",
+    "trustDelivery": "5-Day Delivery"
+  },
+  "problem": {
+    "label": "The Problem",
+    "title": "Your current website is",
+    "titleHighlight": "costing you customers.",
+    "items": [
+      "Slow load times that drive visitors away",
+      "Outdated design that doesn't reflect your brand",
+      "Not mobile-friendly — losing half your traffic",
+      "No clear call to action — visitors leave without converting"
+    ]
+  },
+  "solution": {
+    "label": "The Solution",
+    "title": "Here's what",
+    "titleHighlight": "we build.",
+    "items": [
+      "Lightning-fast pages — 95+ PageSpeed score",
+      "Modern, clean design tailored to your business",
+      "Mobile-first — flawless on every device",
+      "Conversion-focused — every element has a purpose"
+    ]
+  },
+  "services": {
+    "title": "Simple, transparent pricing.",
+    "subtitle": "No hidden fees. No surprises. Pick what fits your business.",
+    "getStarted": "Get Started",
+    "monthlyCare": "Monthly Care:",
+    "monthlyDesc": "Hosting, updates & support —",
+    "monthlyPrice": "$29/mo",
+    "landing": {
+      "title": "Landing Page",
+      "description": "Perfect for promotions and campaigns. One focused page designed to convert.",
+      "price": "$500",
+      "delivery": "3–5 days"
+    },
+    "business": {
+      "title": "Business Website",
+      "description": "Your complete online presence. Up to 5 pages, custom design, SEO-ready.",
+      "price": "$800",
+      "delivery": "5–7 days"
+    },
+    "premium": {
+      "title": "Premium",
+      "description": "Unlimited pages, blog/CMS, advanced features. For businesses ready to scale.",
+      "price": "Custom",
+      "delivery": "10–14 days"
+    }
+  },
+  "process": {
+    "title": "How it works.",
+    "subtitle": "From first contact to launch — simple, fast, no commitment until you're happy.",
+    "steps": [
+      {
+        "title": "We find your business",
+        "description": "We research your online presence and identify opportunities for growth."
+      },
+      {
+        "title": "We build a preview",
+        "description": "In 48 hours, you receive a live preview of your new website. No commitment."
+      },
+      {
+        "title": "You review & we refine",
+        "description": "Give us feedback. We adjust until it's perfect for your brand."
+      },
+      {
+        "title": "Launch & grow",
+        "description": "Your site goes live. We handle hosting, updates and ongoing support."
+      }
+    ]
+  },
+  "portfolioShowcase": {
+    "title": "Our work.",
+    "subtitle": "Real results for real businesses. Every site is custom-built, fast, and mobile-first.",
+    "viewProject": "View Project",
+    "viewAll": "View All Projects",
+    "viewCaseStudy": "View Case Study"
+  },
+  "stats": {
+    "pageSpeed": "Avg. PageSpeed Score",
+    "preview": "Preview Delivery",
+    "websites": "Websites Delivered",
+    "mobile": "Mobile Optimized"
+  },
+  "contactCTA": {
+    "title": "Ready to see what your new website looks like?",
+    "subtitle": "Tell us about your business. We'll build a free live preview in 48 hours. No commitment, no credit card.",
+    "email": "hello@7clicks.dev",
+    "responseTime": "We respond within 24 hours",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "John Smith",
+      "email": "Email",
+      "emailPlaceholder": "john{'@'}business.com",
+      "business": "Business Name",
+      "businessPlaceholder": "Your business name",
+      "website": "Current Website URL",
+      "optional": "(optional)",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your business and what you need...",
+      "submit": "Get My Free Preview",
+      "sending": "Sending..."
+    },
+    "toast": {
+      "success": "Message sent! We'll get back to you within 24 hours.",
+      "error": "Something went wrong. Please try again or email us directly."
+    }
+  },
+  "footer": {
+    "tagline": "Modern websites for local businesses. Fast, mobile-first, designed to convert.",
+    "company": "Company",
+    "connect": "Connect",
+    "copyright": "7clicks. Remote-first agency."
+  },
+  "about": {
+    "heroTitle": "We're a remote web agency obsessed with",
+    "heroHighlight": "speed and simplicity.",
+    "mission1": "We build high-performance websites for local businesses across the US and Europe. No bloated templates. No page builders. Just clean, custom code that loads fast and looks great on every device.",
+    "mission2": "We believe every local business — from dental clinics to barbershops to restaurants — deserves a website that actually brings in customers. Not just a digital business card, but a conversion machine.",
+    "values": {
+      "fastDelivery": {
+        "title": "Fast Delivery",
+        "description": "Live preview in 48 hours. Full site in 5-7 days. We move fast without cutting corners."
+      },
+      "resultsFocused": {
+        "title": "Results-Focused",
+        "description": "Every design decision is made to help your business get more customers online."
+      },
+      "noBs": {
+        "title": "No BS",
+        "description": "Transparent pricing. No contracts. You see the work before you pay a cent."
+      }
+    },
+    "techTitle": "Built with modern tech",
+    "techDesc": "Every site we build uses Nuxt, Vue, and Tailwind CSS — the same stack behind some of the fastest websites on the internet. No WordPress. No Wix. No compromises on performance.",
+    "ctaTitle": "Let's build something great.",
+    "ctaSubtitle": "See what your new website could look like — free preview in 48 hours.",
+    "ctaWork": "See Our Work",
+    "ctaPreview": "Get Your Free Preview",
+    "seo": {
+      "title": "About — 7clicks",
+      "ogTitle": "7clicks — About Us",
+      "description": "We're a remote web agency that builds high-performance websites for local businesses. Fast delivery, modern tech, no BS.",
+      "ogDescription": "Remote web agency obsessed with speed and simplicity."
+    }
+  },
+  "contactPage": {
+    "heroTitle": "Let's talk.",
+    "heroSubtitle": "Tell us about your business. We'll build a free live preview in 48 hours.",
+    "howItWorks": "How it works",
+    "howItWorksDesc": "Fill out the form and we'll get back to you within 24 hours. We'll ask a few questions about your business, then build a live preview you can see and share — completely free.",
+    "emailDirect": "Email us directly",
+    "responseTime": "Response time",
+    "responseValue": "Within 24 hours",
+    "remoteFirst": "Remote-first",
+    "remoteDesc": "Serving businesses in the US & Europe",
+    "seo": {
+      "title": "Contact — 7clicks",
+      "ogTitle": "7clicks — Contact Us",
+      "description": "Get a free live preview of your new website in 48 hours. Tell us about your business and we'll get started.",
+      "ogDescription": "Free live preview in 48 hours. No commitment, no credit card."
+    }
+  },
+  "pricingPage": {
+    "heroTitle": "Simple, transparent pricing.",
+    "heroSubtitle": "No hidden fees. No surprises. You see a live preview before you pay a cent.",
+    "faqTitle": "Frequently Asked Questions",
+    "faqSubtitle": "Everything you need to know before getting started.",
+    "ctaTitle": "Ready to get started?",
+    "ctaSubtitle": "Tell us about your business. You'll have a live preview in 48 hours.",
+    "ctaButton": "Get Your Free Preview",
+    "seo": {
+      "title": "Pricing — 7clicks",
+      "ogTitle": "7clicks — Transparent Pricing",
+      "description": "Landing pages from $500, business websites from $800. See a live preview before you pay. No hidden fees.",
+      "ogDescription": "Landing pages from $500, business websites from $800. Free preview in 48 hours."
+    }
+  },
+  "pricingTable": {
+    "mostPopular": "Most Popular",
+    "getStarted": "Get Started",
+    "monthlyCare": "Monthly Care:",
+    "monthlyDesc": "Hosting, SSL, updates, minor edits, uptime monitoring —",
+    "monthlyPrice": "$29/mo",
+    "tiers": {
+      "landing": {
+        "name": "Landing Page",
+        "description": "Perfect for promotions and new campaigns.",
+        "price": "$500–$800",
+        "delivery": "3–5 days"
+      },
+      "business": {
+        "name": "Business Website",
+        "description": "Your complete online presence.",
+        "price": "$800–$1,500",
+        "delivery": "5–7 days"
+      },
+      "premium": {
+        "name": "Premium",
+        "description": "For businesses ready to scale.",
+        "price": "Custom",
+        "delivery": "10–14 days"
+      }
+    },
+    "features": {
+      "1page": "1 page",
+      "5pages": "Up to 5 pages",
+      "unlimitedPages": "Unlimited pages",
+      "mobileOptimized": "Mobile optimized",
+      "seoBasics": "SEO basics",
+      "contactForm": "Contact form",
+      "customDesign": "Custom design",
+      "blogCms": "Blog / CMS",
+      "blogCmsPlus": "Blog / CMS (+$300)",
+      "blogCmsIncluded": "Blog / CMS included"
+    }
+  },
+  "faq": [
+    {
+      "question": "Do I pay before seeing anything?",
+      "answer": "No. We build a free live preview first. You only pay if you love it and want to go live."
+    },
+    {
+      "question": "How do I pay?",
+      "answer": "Via Wise or PayPal. Simple international transfer — no complicated invoicing."
+    },
+    {
+      "question": "Can I cancel Monthly Care?",
+      "answer": "Yes, anytime. No contracts, no cancellation fees. Your site stays yours."
+    },
+    {
+      "question": "Do you redesign existing sites?",
+      "answer": "Yes. Same process, same pricing. We'll rebuild your site from scratch with modern tech and design."
+    },
+    {
+      "question": "What tech do you use?",
+      "answer": "We build with Nuxt, Vue, and Tailwind CSS — modern, fast, and SEO-friendly. No WordPress, no page builders."
+    },
+    {
+      "question": "Do you offer ongoing support?",
+      "answer": "Yes, through our Monthly Care plan ($29/mo). It includes hosting, SSL, updates, minor edits, and uptime monitoring."
+    }
+  ],
+  "portfolioPage": {
+    "heroTitle": "Our Work",
+    "heroSubtitle": "Real results for real businesses. Every site is custom-built, fast, and mobile-first.",
+    "ctaTitle": "Want similar results?",
+    "ctaSubtitle": "We'll build a free live preview for your business in 48 hours. No commitment.",
+    "ctaButton": "Get Your Free Preview",
+    "seo": {
+      "title": "Portfolio — 7clicks",
+      "ogTitle": "7clicks — Portfolio",
+      "description": "See our work: high-performance websites for local businesses across the US and Europe.",
+      "ogDescription": "Real results for real businesses. Custom-built, fast, mobile-first websites."
+    }
+  },
+  "caseStudy": {
+    "challenge": "The Challenge",
+    "solution": "Our Solution",
+    "results": "Results",
+    "screenshot": "Full website screenshot",
+    "notFound": "Project not found",
+    "backToPortfolio": "Back to Portfolio",
+    "ctaTitle": "Want similar results for your business?",
+    "ctaSubtitle": "Get a free live preview in 48 hours. No commitment, no credit card.",
+    "ctaButton": "Get Your Free Preview"
+  },
+  "beforeAfter": {
+    "before": "Before",
+    "after": "After",
+    "oldWebsite": "Old website",
+    "newWebsite": "New 7clicks website"
+  },
+  "error": {
+    "backHome": "Back to home",
+    "404": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist or has been moved."
+    },
+    "403": {
+      "title": "Access denied",
+      "description": "You do not have permission to access this resource."
+    },
+    "500": {
+      "title": "Something went wrong",
+      "description": "An unexpected error occurred. Please try again later."
+    }
+  },
+  "seo": {
+    "homeTitle": "7clicks — Modern Websites for Local Businesses",
+    "homeDescription": "We design and build high-performance websites for local businesses in the US and Europe. Live preview in 48 hours. Starting at $500.",
+    "homeOgDescription": "Custom-built, fast, mobile-first websites. Live preview in 48 hours. Starting at $500."
+  },
+  "portfolio": {
+    "projects": {
+      "bright-smile-dental": {
+        "type": "Dental Clinic",
+        "tag": "Business Website",
+        "challenge": "Outdated website with slow load times, no mobile optimization, and zero online appointment bookings. Patients were calling or just going elsewhere.",
+        "solution": "Built a clean, modern 4-page site with online booking integration, mobile-first design, and optimized images. Focused on trust signals and clear calls to action.",
+        "results": [
+          "PageSpeed score jumped from 34 to 98",
+          "Mobile-friendly design increased mobile traffic by 60%",
+          "Online booking form reduced phone call volume",
+          "Delivered in 5 days from first contact"
+        ]
+      },
+      "oak-street-barbershop": {
+        "type": "Barbershop",
+        "tag": "Landing Page",
+        "challenge": "No web presence at all — relying entirely on Instagram and word of mouth. Losing potential walk-in customers who search \"barbershop near me.\"",
+        "solution": "Created a single-page landing site with services, pricing, location map, and a clear \"Book Now\" button. Optimized for local SEO.",
+        "results": [
+          "PageSpeed 96 on mobile and desktop",
+          "Appeared in local search results within 2 weeks",
+          "Clean design that matches their brand aesthetic",
+          "Delivered in 3 days"
+        ]
+      },
+      "bella-cucina": {
+        "type": "Italian Restaurant",
+        "tag": "Business Website",
+        "challenge": "Had a WordPress site from 2018 — slow, cluttered, and the menu was a blurry PDF. Customers couldn't find hours or location easily.",
+        "solution": "Designed a 3-page site with a beautiful digital menu, reservation link, and prominent hours/location. Photography-forward layout with warm tones.",
+        "results": [
+          "PageSpeed improved from 41 to 97",
+          "Digital menu replaced PDF — accessible on all devices",
+          "Reservation clicks increased significantly",
+          "Delivered in 4 days"
+        ]
+      }
+    }
+  }
+}

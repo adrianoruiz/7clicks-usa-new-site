@@ -20,11 +20,104 @@
 
 /* ─── daisyUI ───────────────────────────────────────────────────── */
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: 7clicks --default, 7clicks-dark --prefersdark;
+}
+
+/* ─── 7clicks Custom Theme (baseado nas cores da logo) ──────────── */
+@plugin "daisyui/theme" {
+  name: "7clicks";
+  default: true;
+  color-scheme: light;
+
+  /* Primary - Blue Dark (CTAs, botões principais) */
+  --color-primary: #0A5E8A;
+  --color-primary-content: #FFFFFF;
+
+  /* Secondary - Blue Medium (links, botões secundários) */
+  --color-secondary: #1B8DBF;
+  --color-secondary-content: #FFFFFF;
+
+  /* Accent - Cyan Light (destaques, badges) */
+  --color-accent: #6DD3E8;
+  --color-accent-content: #064569;
+
+  /* Neutral - Navy (nav, footer, backgrounds escuros) */
+  --color-neutral: #064569;
+  --color-neutral-content: #EEEEF2;
+
+  /* Base colors */
+  --color-base-100: #FFFFFF;
+  --color-base-200: #F8FBFD;
+  --color-base-300: #EEEEF2;
+  --color-base-content: #1A1A2E;
+
+  /* Semantic */
+  --color-info: #1B8DBF;
+  --color-info-content: #FFFFFF;
+  --color-success: #10B981;
+  --color-success-content: #FFFFFF;
+  --color-warning: #F59E0B;
+  --color-warning-content: #1A1A2E;
+  --color-error: #EF4444;
+  --color-error-content: #FFFFFF;
+
+  /* Radius & other */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --border: 1.5px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "7clicks-dark";
+  prefersdark: true;
+  color-scheme: dark;
+
+  /* Primary - Cyan Light (inverte destaque no dark) */
+  --color-primary: #6DD3E8;
+  --color-primary-content: #064569;
+
+  /* Secondary - Blue Medium */
+  --color-secondary: #1B8DBF;
+  --color-secondary-content: #FFFFFF;
+
+  /* Accent - Cyan Light mais brilhante */
+  --color-accent: #8CDFF0;
+  --color-accent-content: #064569;
+
+  /* Neutral */
+  --color-neutral: #1E293B;
+  --color-neutral-content: #F1F5F9;
+
+  /* Base colors - dark backgrounds */
+  --color-base-100: #0F172A;
+  --color-base-200: #1E293B;
+  --color-base-300: #334155;
+  --color-base-content: #F1F5F9;
+
+  /* Semantic */
+  --color-info: #6DD3E8;
+  --color-info-content: #064569;
+  --color-success: #34D399;
+  --color-success-content: #064E3B;
+  --color-warning: #FBBF24;
+  --color-warning-content: #1A1A2E;
+  --color-error: #FB7185;
+  --color-error-content: #1A1A2E;
+
+  /* Radius & other */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --border: 1.5px;
+  --depth: 1;
+  --noise: 0;
 }
 
 /* Conectar Tailwind dark: variant com daisyUI data-theme */
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where([data-theme=7clicks-dark], [data-theme=7clicks-dark] *));
 
 /* ─── Fix: cursor pointer em botoes (v4 usa cursor default) ────── */
 @layer base {

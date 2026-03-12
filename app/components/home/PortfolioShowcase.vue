@@ -9,7 +9,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div v-for="project in projects" :key="project.slug"
+        <NuxtLink v-for="project in projects" :key="project.slug" :to="`/portfolio/${project.slug}`"
              class="card bg-base-100 shadow-sm hover:shadow-lg transition-all duration-300 group overflow-hidden">
           <!-- Placeholder image area -->
           <figure class="relative h-48 bg-gradient-to-br from-primary/5 to-secondary/5 overflow-hidden">
@@ -29,12 +29,12 @@
             <div class="flex items-center gap-2 mt-3">
               <div class="badge badge-success badge-sm gap-1">
                 <Gauge :size="12" />
-                {{ project.score }}
+                PageSpeed {{ project.score }}
               </div>
               <div class="badge badge-outline badge-sm">{{ project.tag }}</div>
             </div>
           </div>
-        </div>
+        </NuxtLink>
       </div>
 
       <div class="text-center mt-12">
@@ -50,30 +50,6 @@
 <script setup lang="ts">
 import { Monitor, ArrowUpRight, ArrowRight, Gauge } from 'lucide-vue-next'
 
-const projects = [
-  {
-    slug: 'bright-smile-dental',
-    name: 'Bright Smile Dental',
-    type: 'Dental Clinic',
-    location: 'Miami, FL',
-    score: 'PageSpeed 98',
-    tag: 'Business Website'
-  },
-  {
-    slug: 'oak-street-barbershop',
-    name: 'Oak Street Barbershop',
-    type: 'Barbershop',
-    location: 'Austin, TX',
-    score: 'PageSpeed 96',
-    tag: 'Landing Page'
-  },
-  {
-    slug: 'bella-cucina',
-    name: 'Bella Cucina',
-    type: 'Italian Restaurant',
-    location: 'Chicago, IL',
-    score: 'PageSpeed 97',
-    tag: 'Business Website'
-  }
-]
+const { getProjects } = usePortfolio()
+const projects = getProjects()
 </script>

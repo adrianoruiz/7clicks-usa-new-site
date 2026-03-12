@@ -15,10 +15,10 @@
           <div>
             <h4 class="text-sm font-semibold mb-3 text-neutral-content/40 uppercase tracking-wider">Company</h4>
             <ul class="space-y-2 text-sm">
-              <li><NuxtLink to="#portfolio" class="hover:text-primary transition-colors">Portfolio</NuxtLink></li>
+              <li><NuxtLink to="/portfolio" class="hover:text-primary transition-colors">Portfolio</NuxtLink></li>
               <li><NuxtLink to="/pricing" class="hover:text-primary transition-colors">Pricing</NuxtLink></li>
               <li><NuxtLink to="/about" class="hover:text-primary transition-colors">About</NuxtLink></li>
-              <li><NuxtLink to="#contact" class="hover:text-primary transition-colors">Contact</NuxtLink></li>
+              <li><NuxtLink to="/contact" class="hover:text-primary transition-colors">Contact</NuxtLink></li>
             </ul>
           </div>
           <div>

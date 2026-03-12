@@ -104,7 +104,7 @@
   "contactCTA": {
     "title": "Pronto para ver como será seu novo site?",
     "subtitle": "Conte-nos sobre seu negócio. Vamos criar um preview ao vivo grátis em 48 horas. Sem compromisso, sem cartão de crédito.",
-    "email": "hello@7clicks.dev",
+    "email": "hello{'@'}7clicks.dev",
     "responseTime": "Respondemos em até 24 horas",
     "form": {
       "name": "Nome",

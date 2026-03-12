@@ -31,7 +31,8 @@
 const { t, tm, rt } = useI18n()
 
 const steps = computed(() => {
-  const items = tm('process.steps') as Array<{ title: string; description: string }>
+  const items = tm('process.steps')
+  if (!Array.isArray(items)) return []
   return items.map(item => ({
     title: rt(item.title),
     description: rt(item.description)

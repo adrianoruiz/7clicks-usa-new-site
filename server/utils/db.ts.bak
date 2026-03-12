@@ -1,2 +1,2 @@
-export { db } from '../database'
+export { useDb } from '../database'
 export type { Database } from '../database'

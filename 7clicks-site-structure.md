@@ -8,18 +8,35 @@ Kill the "Brazilian generalist agency" perception. Become the go-to partner for 
 
 ## Tech Stack
 
-| Layer | Choice | Why |
-|-------|--------|-----|
-| Framework | **Nuxt 4** (SSG mode) | Fast, SEO-friendly, you ship faster with it |
-| Styling | **Tailwind CSS 4** | Utility-first, consistent, fast iteration |
-| Animations | **GSAP** or **@vueuse/motion** | Smooth, professional micro-interactions |
-| Fonts | **Google Fonts** — Satoshi (display) + General Sans (body) | Modern, not overused, professional |
-| Icons | **Lucide** or **Phosphor** | Clean, consistent |
-| Forms | **Formspree** or **Resend** | No backend needed, reliable email delivery |
-| Deploy | **Vercel** or **Cloudflare Pages** | Edge performance, free tier generous |
-| Analytics | **Plausible** or **Umami** | Privacy-first, no cookie banner needed |
-| i18n | **@nuxtjs/i18n** | EN default, PT-BR toggle |
-| CMS (optional) | **Nuxt Content** or **Notion as CMS** | For blog/case studies later |
+| Layer | Choice | Version | Why |
+|-------|--------|---------|-----|
+| Framework | **Nuxt 4** | ^4.3.1 | Fast, SEO-friendly, SSR/SSG, `app/` directory |
+| UI Framework | **Vue 3** | ^3.5.28 | Composition API, TypeScript-first |
+| Language | **TypeScript** | ^5.9.3 | Type safety, strict mode enabled |
+| Styling | **Tailwind CSS 4** | ^4.2.1 | CSS-first config (`@plugin`, `@theme`), no `tailwind.config.ts` |
+| UI Components | **daisyUI 5** | ^5.5.19 | Semantic classes, 35 themes, zero deps |
+| Icons | **Lucide** (`lucide-vue-next`) | latest | Clean, consistent, tree-shakeable |
+| State | **Pinia 3** | ^3.0.4 | Official Vue state management |
+| Images | **@nuxt/image** | ^2.0.0 | Auto webp/avif, lazy loading |
+| ORM | **Drizzle ORM** | ^0.45.1 | Type-safe, lightweight, PostgreSQL |
+| DB | **PostgreSQL** | via external host | Drizzle push/migrate, `postgres` driver ^3.4.5 |
+| Runtime | **Bun** | latest | Dev server via `bun --bun nuxt dev` |
+| Tests | **Vitest** | ^4.0.18 | Fast, Vite-native, happy-dom |
+| Lint | **@nuxt/eslint** | ^1.3.0 | Nuxt-aware linting |
+| Deploy | **Docker** + **VPS (Hostinger)** | — | `Dockerfile` + `docker-compose.yml`, port 3007 |
+| Fonts | **Google Fonts** — Satoshi (display) + General Sans (body) | — | Modern, not overused, professional |
+| Forms | TBD (server API route) | — | Nitro server endpoint `server/api/` |
+| Analytics | TBD | — | Privacy-first preferred |
+| i18n | TBD | — | EN default, PT-BR toggle (future) |
+| CMS (optional) | TBD | — | For blog/case studies later |
+
+### Key Architecture Decisions
+- **No `tailwind.config.ts`** — Tailwind v4 is CSS-first, all config via `@plugin`, `@theme`, `@import` in `main.css`
+- **`@tailwindcss/vite`** plugin directly in `nuxt.config.ts` (NOT `@nuxtjs/tailwindcss` module)
+- **Nuxt 4 `app/` directory** — pages, components, composables, stores live under `app/`
+- **daisyUI themes**: `light` (default) + `dark` (prefers-dark) — expandable via CSS
+- **No separate PostgreSQL in Docker** — using external DB, docker-compose only has `app` service with production profile
+- **Dev port**: 3007
 
 ---
 
@@ -306,138 +323,164 @@ font-family: 'JetBrains Mono', monospace;
 
 ---
 
-## Nuxt 4 Project Structure
+## Project Structure (Nuxt 4 — `app/` directory)
 
 ```
-7clicks/
-├── nuxt.config.ts
-├── app.vue
-├── assets/
-│   ├── css/
-│   │   └── main.css           # Tailwind + custom styles
-│   └── images/
-│       ├── logo.svg
-│       └── portfolio/         # Project screenshots
-├── components/
-│   ├── layout/
-│   │   ├── TheHeader.vue
-│   │   ├── TheFooter.vue
-│   │   └── LanguageToggle.vue
-│   ├── home/
-│   │   ├── HeroSection.vue
-│   │   ├── ProblemSolution.vue
-│   │   ├── ServicesGrid.vue
-│   │   ├── ProcessTimeline.vue
-│   │   ├── PortfolioShowcase.vue
-│   │   ├── SocialProof.vue
-│   │   └── ContactCTA.vue
-│   ├── portfolio/
-│   │   ├── ProjectCard.vue
-│   │   └── BeforeAfter.vue
-│   ├── pricing/
-│   │   ├── PricingTable.vue
-│   │   └── FAQAccordion.vue
-│   └── ui/
-│       ├── BaseButton.vue
-│       ├── SectionHeading.vue
-│       ├── StatCard.vue
-│       └── AnimatedCounter.vue
-├── composables/
-│   ├── useScrollAnimation.ts   # Intersection Observer for reveals
-│   └── useContactForm.ts       # Form submission logic
-├── layouts/
-│   └── default.vue
-├── pages/
-│   ├── index.vue               # Home (single-page)
-│   ├── portfolio/
-│   │   ├── index.vue           # Portfolio grid
-│   │   └── [slug].vue          # Case study detail
-│   ├── pricing.vue
-│   ├── about.vue
-│   └── contact.vue
-├── content/                    # Nuxt Content for case studies
-│   └── portfolio/
-│       ├── bright-smile-dental.md
-│       ├── oak-street-barbershop.md
-│       └── bella-cucina-restaurant.md
-├── i18n/
-│   ├── en.json
-│   └── pt-br.json
-├── public/
-│   ├── favicon.ico
-│   └── og-image.png
+7clicks-usa-new-site/
+├── app/                          # Nuxt 4 app directory
+│   ├── app.vue                   # Root component
+│   ├── error.vue                 # Global error page (404, 500)
+│   ├── assets/
+│   │   └── css/
+│   │       └── main.css          # Tailwind v4 + daisyUI config (CSS-first)
+│   ├── components/
+│   │   ├── AppNavbar.vue         # Responsive navbar (Lucide Menu icon)
+│   │   ├── AppFooter.vue         # Footer with year + app name
+│   │   ├── ThemeToggle.vue       # Theme switcher (Lucide Palette icon)
+│   │   ├── AppToast.vue          # Toast notification system
+│   │   ├── home/                 # (to create) Home page sections
+│   │   │   ├── HeroSection.vue
+│   │   │   ├── ProblemSolution.vue
+│   │   │   ├── ServicesGrid.vue
+│   │   │   ├── ProcessTimeline.vue
+│   │   │   ├── PortfolioShowcase.vue
+│   │   │   ├── SocialProof.vue
+│   │   │   └── ContactCTA.vue
+│   │   ├── portfolio/            # (to create)
+│   │   │   ├── ProjectCard.vue
+│   │   │   └── BeforeAfter.vue
+│   │   └── pricing/              # (to create)
+│   │       ├── PricingTable.vue
+│   │       └── FAQAccordion.vue
+│   ├── composables/
+│   │   └── useToast.ts           # Toast state management
+│   ├── layouts/
+│   │   └── default.vue           # Navbar + main + footer
+│   ├── pages/
+│   │   ├── index.vue             # Home (single-page, boilerplate — needs custom content)
+│   │   ├── portfolio/            # (to create)
+│   │   │   ├── index.vue
+│   │   │   └── [slug].vue
+│   │   ├── pricing.vue           # (to create)
+│   │   ├── about.vue             # (to create)
+│   │   └── contact.vue           # (to create)
+│   ├── plugins/
+│   │   └── theme.client.ts       # Theme persistence (localStorage)
+│   └── stores/
+│       └── user.ts               # Pinia user store
 ├── server/
-│   └── api/
-│       └── contact.post.ts     # Contact form handler
-└── tailwind.config.ts
+│   ├── api/
+│   │   └── health.get.ts         # Health check endpoint
+│   ├── database/
+│   │   ├── index.ts              # Drizzle + postgres connection
+│   │   └── schema.ts             # Users table (Drizzle schema)
+│   ├── middleware/
+│   │   └── log.ts                # Request logging
+│   └── utils/
+│       └── db.ts                 # Re-exports db
+├── public/
+│   └── favicon.ico
+├── nuxt.config.ts                # Nuxt config (Tailwind vite plugin, Pinia, etc.)
+├── drizzle.config.ts             # Drizzle Kit config
+├── docker-compose.yml            # Production app container (port 3007)
+├── Dockerfile                    # Multi-stage Bun build
+├── eslint.config.mjs             # Nuxt ESLint
+├── vitest.config.ts              # Vitest + happy-dom
+├── tsconfig.json
+├── package.json
+└── bun.lock
 ```
+
+### What exists vs. what needs to be built
+
+| Status | Item |
+|--------|------|
+| Done | Nuxt 4 boilerplate, layout, navbar, footer, theme toggle, toast system |
+| Done | Drizzle + PostgreSQL setup, health API, server middleware |
+| Done | Docker + CI/deploy config |
+| **To build** | Home page sections (Hero, Problem/Solution, Services, Process, Portfolio, Social Proof, Contact CTA) |
+| **To build** | Portfolio pages (`/portfolio`, `/portfolio/[slug]`) |
+| **To build** | Pricing page with table + FAQ |
+| **To build** | About page |
+| **To build** | Contact page with form |
+| **To build** | Scroll animations / micro-interactions |
+| **To build** | i18n (EN/PT-BR) |
+| **To build** | SEO meta tags per page |
+| **To decide** | Form submission strategy (server API route vs external service) |
+| **To decide** | Analytics provider |
+| **To decide** | CMS for case studies |
 
 ---
 
 ## SEO Strategy (built into Nuxt)
 
+Currently configured in `nuxt.config.ts`:
+- `lang: 'en'`, `charset: 'utf-8'`, `viewport` set
+- `title: '7clicks'`
+- `description: '7clicks - Professional Development and AI Engineering'`
+- Page transitions enabled (`page` + `layout`)
+- `@nuxt/image` with webp/avif auto-format
+
+**Per-page SEO** — use `useSeoMeta()` in each page:
 ```ts
-// nuxt.config.ts essentials
-export default defineNuxtConfig({
-  app: {
-    head: {
-      title: '7clicks — Modern Websites for [Niche] Businesses',
-      meta: [
-        { name: 'description', content: 'We design and build high-performance websites for [niche] businesses in the US and Europe. Live preview in 48 hours. Starting at $500.' },
-        { property: 'og:title', content: '7clicks — Modern Websites for [Niche] Businesses' },
-        { property: 'og:description', content: 'Live preview in 48 hours. Starting at $500.' },
-        { property: 'og:image', content: '/og-image.png' },
-      ],
-      link: [
-        { rel: 'canonical', href: 'https://7clicks.dev' }
-      ]
-    }
-  },
-  // SSG for performance
-  nitro: {
-    prerender: {
-      routes: ['/']
-    }
-  }
+useSeoMeta({
+  title: 'Page Title',
+  ogTitle: '7clicks — Page Title',
+  description: 'Page description for SEO.',
+  ogDescription: 'Page description for social sharing.',
+  ogImage: '/og-image.png'
 })
 ```
+
+**Still needed:**
+- OG image (`/public/og-image.png`)
+- Canonical URLs
+- Structured data (JSON-LD for LocalBusiness or Organization)
+- SSG prerender config if going static
 
 ---
 
 ## Implementation Priority (Sprint Plan)
 
-### Week 1: Foundation
-- [ ] Nuxt 4 project setup + Tailwind + i18n
-- [ ] TheHeader + TheFooter + default layout
-- [ ] HeroSection component
-- [ ] Deploy to Vercel (get live URL early)
+### Phase 1: Foundation (DONE)
+- [x] Nuxt 4 project setup + Tailwind v4 + daisyUI 5
+- [x] AppNavbar + AppFooter + default layout
+- [x] ThemeToggle (light/dark)
+- [x] Toast notification system
+- [x] Error page (404/500)
+- [x] Drizzle ORM + PostgreSQL schema
+- [x] Docker + Dockerfile
+- [x] Vitest + ESLint setup
 
-### Week 2: Core Sections
-- [ ] ProblemSolution section
-- [ ] ServicesGrid with pricing
-- [ ] ProcessTimeline
-- [ ] ContactCTA with form integration
+### Phase 2: Home Page Sections
+- [ ] HeroSection — bold, typography-driven, animated background
+- [ ] ProblemSolution — before/after visual contrast
+- [ ] ServicesGrid — 3 cards with pricing
+- [ ] ProcessTimeline — 4 steps, visual
+- [ ] ContactCTA — split layout, form + copy
+- [ ] Deploy to Hostinger VPS (get live URL early)
 
-### Week 3: Portfolio
-- [ ] Create 3 demo sites with Lovable (dental, restaurant, barbershop)
-- [ ] PortfolioShowcase component
-- [ ] Case study pages with Nuxt Content
-- [ ] BeforeAfter component
+### Phase 3: Inner Pages
+- [ ] Portfolio showcase grid on home
+- [ ] `/portfolio` page with project cards
+- [ ] `/portfolio/[slug]` case study pages
+- [ ] `/pricing` with table + FAQ accordion
+- [ ] `/about` — minimal, process-focused
+- [ ] `/contact` — dedicated form page
 
-### Week 4: Polish & Launch
-- [ ] Pricing page
-- [ ] About page
+### Phase 4: Polish & Launch
 - [ ] Scroll animations + micro-interactions
-- [ ] SEO meta tags + OG images
+- [ ] SEO meta tags + OG images per page
 - [ ] PageSpeed optimization (target: 95+)
-- [ ] Language toggle (EN/PT-BR)
+- [ ] Custom fonts (Satoshi + General Sans)
+- [ ] Form submission endpoint (`server/api/contact.post.ts`)
 
-### Week 5+: Prospecting Engine
-- [ ] Start Google Maps prospecting in chosen niche
-- [ ] Build first 5 speculative demos
-- [ ] Write outbound email templates
-- [ ] Set up Wise account for international payments
-- [ ] Set up Invoice Ninja for professional invoicing
+### Phase 5: Growth
+- [ ] i18n (EN/PT-BR toggle)
+- [ ] Analytics integration
+- [ ] Blog/CMS for case studies
+- [ ] Google Maps prospecting in chosen niche
+- [ ] Speculative demos for prospects
 
 ---
 

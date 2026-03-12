@@ -9,11 +9,14 @@
         <ul tabindex="0"
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow-lg border border-base-300">
           <li><NuxtLink to="/">Home</NuxtLink></li>
+          <li><NuxtLink to="#portfolio">Portfolio</NuxtLink></li>
+          <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
           <li><NuxtLink to="/about">About</NuxtLink></li>
+          <li><NuxtLink to="#contact">Contact</NuxtLink></li>
         </ul>
       </div>
-      <NuxtLink to="/" class="btn btn-ghost text-xl">
-        {{ $config.public.appName }}
+      <NuxtLink to="/" class="btn btn-ghost text-xl font-bold">
+        7clicks
       </NuxtLink>
     </div>
 
@@ -21,12 +24,17 @@
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
         <li><NuxtLink to="/">Home</NuxtLink></li>
+        <li><NuxtLink to="#portfolio">Portfolio</NuxtLink></li>
+        <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
         <li><NuxtLink to="/about">About</NuxtLink></li>
       </ul>
     </div>
 
     <div class="navbar-end gap-2">
       <ThemeToggle />
+      <NuxtLink to="#contact" class="btn btn-primary btn-sm hidden sm:inline-flex">
+        Get a Free Preview
+      </NuxtLink>
     </div>
   </div>
 </template>

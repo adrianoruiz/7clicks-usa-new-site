@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: 7clicks_site_app
+    restart: unless-stopped
+    ports:
+      - "3007:3000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@host.docker.internal:5432/7clicks_site
+      - NODE_ENV=production
+    profiles:
+      - production

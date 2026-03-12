@@ -1,0 +1,16 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "vue": "html",
+    "vue-html": "html"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["class=\"([^\"]*)\"", "([a-zA-Z0-9\\-:/ ]+)"],
+    [":class=\"([^\"]*)\"", "([a-zA-Z0-9\\-:/ ]+)"]
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}

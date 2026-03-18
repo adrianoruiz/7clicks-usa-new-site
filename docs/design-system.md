@@ -55,8 +55,9 @@ Design System oficial da 7clicks, baseado nas cores extraídas da logo.
 ### Font Stack
 
 ```css
---font-heading: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
---font-body: 'Inter', 'SF Pro Text', -apple-system, sans-serif;
+/* Via Fontshare CDN (carregado em main.css) */
+--font-display: 'Satoshi', sans-serif;   /* Títulos — pesos 700, 900 */
+--font-body: 'General Sans', sans-serif; /* Corpo — pesos 400, 500, 600 */
 --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 ```
 
@@ -299,24 +300,102 @@ Baseado em escala de 4px.
 
 ---
 
-## 9. Animações e Transições
+## 9. Animações e Transições (Antigravity Style)
+
+### Easing
 
 ```css
-/* Transição padrão */
---transition-fast: 150ms ease;
---transition-base: 200ms ease;
---transition-slow: 300ms ease;
+/* Easing principal — suave e premium */
+--ease-antigravity: cubic-bezier(0.22, 1, 0.36, 1);
 
-/* Easing curves */
---ease-out: cubic-bezier(0.16, 1, 0.3, 1);
---ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+/* Durações */
+--duration-fast:  150ms;
+--duration-base:  300ms;
+--duration-page:  500ms;
+--duration-scroll: 800ms;
+```
+
+### Transições de Página (Nuxt)
+
+Usam `opacity + translateY + blur` para entrada/saída fluida entre rotas.
+
+```css
+/* Ativo durante transição */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Estado inicial (entrando) */
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  filter: blur(8px);
+}
+
+/* Estado final (saindo) */
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-16px) scale(0.98);
+  filter: blur(8px);
+}
+```
+
+### Scroll Animations
+
+Adicione `.scroll-animate` ao elemento e `.scroll-visible` via JavaScript (IntersectionObserver) quando visível.
+
+```css
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(32px) scale(0.98);
+  filter: blur(12px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-animate.scroll-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+```
+
+#### Delays de Stagger
+
+Classes utilitárias para animar elementos em sequência:
+
+| Classe | Delay |
+|--------|-------|
+| `.delay-75` | 75ms |
+| `.delay-100` | 100ms |
+| `.delay-150` | 150ms |
+| `.delay-200` | 200ms |
+| `.delay-300` | 300ms |
+| `.delay-400` | 400ms |
+| `.delay-500` | 500ms |
+| `.delay-600` | 600ms |
+| `.delay-700` | 700ms |
+| `.delay-800` | 800ms |
+| `.delay-1000` | 1000ms |
+
+```html
+<!-- Exemplo: cards em stagger -->
+<div class="scroll-animate delay-100">Card 1</div>
+<div class="scroll-animate delay-200">Card 2</div>
+<div class="scroll-animate delay-300">Card 3</div>
 ```
 
 ### Diretrizes
 - Hover em botões/links: `200ms ease`
-- Abertura de menus/dropdowns: `200ms ease-out`
-- Scroll animations (AOS): `600ms ease-out`
-- Evitar animações em `prefers-reduced-motion: reduce`
+- Transições de página: `500ms cubic-bezier(0.22, 1, 0.36, 1)` com blur
+- Scroll animations: `800ms cubic-bezier(0.22, 1, 0.36, 1)` com blur+scale
+- Sempre usar `will-change: opacity, transform, filter` em `.scroll-animate`
+- Respeitar `@media (prefers-reduced-motion: reduce)` — desativar blur e translate
 
 ---
 
@@ -344,9 +423,9 @@ Baseado em escala de 4px.
   --color-error: #EF4444;
   --color-info: #1B8DBF;
 
-  /* Typography */
-  --font-heading: 'Inter', -apple-system, sans-serif;
-  --font-body: 'Inter', -apple-system, sans-serif;
+  /* Typography (Fontshare) */
+  --font-display: 'Satoshi', sans-serif;
+  --font-body: 'General Sans', sans-serif;
 
   /* Spacing */
   --space-unit: 4px;
@@ -365,10 +444,12 @@ Baseado em escala de 4px.
   --shadow-xl: 0 16px 48px rgba(10, 94, 138, 0.16);
   --shadow-glow: 0 0 0 3px rgba(109, 211, 232, 0.3);
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 300ms ease;
+  /* Transitions (Antigravity Style) */
+  --ease-antigravity: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-page: 500ms;
+  --duration-scroll: 800ms;
 }
 ```
 
@@ -406,17 +487,29 @@ Para uso com Tailwind v4 no projeto:
 
 ---
 
-## 12. Dark Mode
+## 12. Dark Mode (estilo motion.dev — deep black)
+
+Estética: fundo quase preto puro, superfícies muito escuras, bordas sutis com baixa opacidade, acentos vibrantes com brilho.
 
 | Token | Light | Dark |
 |-------|-------|------|
-| Background | `#FFFFFF` | `#0F172A` |
-| Surface | `#EEEEF2` | `#1E293B` |
-| Text primary | `#1A1A2E` | `#F1F5F9` |
-| Text secondary | `#4A4A5A` | `#94A3B8` |
-| Border | `#C4C4CC` | `#334155` |
+| Background (base-100) | `#FFFFFF` | `#080808` |
+| Surface (base-200) | `#F8FBFD` | `#121212` |
+| Elevated (base-300) | `#EEEEF2` | `#1a1a1f` |
+| Text primary | `#1A1A2E` | `#f5f5f5` |
+| Text secondary | `#4A4A5A` | `#747e91` |
+| Border | `#C4C4CC` | `rgba(255,255,255,0.1)` |
+| Neutral | `#064569` | `#141418` |
 | Primary | `#0A5E8A` | `#6DD3E8` |
 | Primary hover | `#1B8DBF` | `#8CDFF0` |
+| Secondary | `#1B8DBF` | `#3BA3D4` |
+
+### Princípios do Dark Theme
+- **Deep black**: fundo `#080808` (quase preto puro, não azulado)
+- **Contraste sutil**: superfícies apenas ligeiramente mais claras que o fundo
+- **Bordas com opacidade**: usar `rgba(255,255,255,0.1)` em vez de cores sólidas
+- **Acentos vibrantes**: cores primárias ficam mais brilhantes no dark para glow effect
+- **Content escuro**: textos de botões/badges usam `#080808` sobre cores claras
 
 ---
 

@@ -20,7 +20,7 @@
 
 /* ─── daisyUI ───────────────────────────────────────────────────── */
 @plugin "daisyui" {
-  themes: 7clicks --default, 7clicks-dark --prefersdark;
+  themes: 7clicks --default, 7clicks-dark;
 }
 
 /* ─── 7clicks Custom Theme (baseado nas cores da logo) ──────────── */
@@ -72,52 +72,84 @@
 
 @plugin "daisyui/theme" {
   name: "7clicks-dark";
-  prefersdark: true;
+  default: false;
+  prefersdark: false;
   color-scheme: dark;
 
   /* Primary - Cyan Light (inverte destaque no dark) */
   --color-primary: #6DD3E8;
-  --color-primary-content: #064569;
+  --color-primary-content: #080808;
 
-  /* Secondary - Blue Medium */
-  --color-secondary: #1B8DBF;
-  --color-secondary-content: #FFFFFF;
+  /* Secondary - Blue Medium (mais vibrante no escuro) */
+  --color-secondary: #3BA3D4;
+  --color-secondary-content: #080808;
 
-  /* Accent - Cyan Light mais brilhante */
+  /* Accent - Cyan brilhante (glow effect) */
   --color-accent: #8CDFF0;
-  --color-accent-content: #064569;
+  --color-accent-content: #080808;
 
-  /* Neutral */
-  --color-neutral: #1E293B;
-  --color-neutral-content: #F1F5F9;
+  /* Neutral - quase preto */
+  --color-neutral: #141418;
+  --color-neutral-content: #f5f5f5;
 
-  /* Base colors - dark backgrounds */
-  --color-base-100: #0F172A;
-  --color-base-200: #1E293B;
-  --color-base-300: #334155;
-  --color-base-content: #F1F5F9;
+  /* Base colors - deep black (estilo motion.dev) */
+  --color-base-100: #080808;
+  --color-base-200: #121212;
+  --color-base-300: #1a1a1f;
+  --color-base-content: #f5f5f5;
 
   /* Semantic */
   --color-info: #6DD3E8;
-  --color-info-content: #064569;
+  --color-info-content: #080808;
   --color-success: #34D399;
-  --color-success-content: #064E3B;
+  --color-success-content: #080808;
   --color-warning: #FBBF24;
-  --color-warning-content: #1A1A2E;
+  --color-warning-content: #080808;
   --color-error: #FB7185;
-  --color-error-content: #1A1A2E;
+  --color-error-content: #080808;
 
   /* Radius & other */
   --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
   --radius-box: 0.75rem;
-  --border: 1.5px;
+  --border: 1px;
   --depth: 1;
   --noise: 0;
 }
 
 /* Conectar Tailwind dark: variant com daisyUI data-theme */
 @custom-variant dark (&:where([data-theme=7clicks-dark], [data-theme=7clicks-dark] *));
+
+/* ─── Dark theme override (fora de @layer para vencer a cascade) ── */
+[data-theme="7clicks-dark"] {
+  color-scheme: dark;
+  --color-primary: #6DD3E8;
+  --color-primary-content: #080808;
+  --color-secondary: #3BA3D4;
+  --color-secondary-content: #080808;
+  --color-accent: #8CDFF0;
+  --color-accent-content: #080808;
+  --color-neutral: #141418;
+  --color-neutral-content: #f5f5f5;
+  --color-base-100: #080808;
+  --color-base-200: #121212;
+  --color-base-300: #1a1a1f;
+  --color-base-content: #f5f5f5;
+  --color-info: #6DD3E8;
+  --color-info-content: #080808;
+  --color-success: #34D399;
+  --color-success-content: #080808;
+  --color-warning: #FBBF24;
+  --color-warning-content: #080808;
+  --color-error: #FB7185;
+  --color-error-content: #080808;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
 
 /* ─── Fix: cursor pointer em botoes (v4 usa cursor default) ────── */
 @layer base {
@@ -127,40 +159,60 @@
   }
 }
 
-/* ─── Transicoes de pagina do Nuxt ────────────────────────────── */
+/* ─── Transicoes de pagina do Nuxt (Antigravity Style) ──────── */
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), 
+              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), 
+              filter 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .page-enter-from {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(16px) scale(0.98);
+  filter: blur(8px);
 }
 .page-leave-to {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-16px) scale(0.98);
+  filter: blur(8px);
 }
 
 .layout-enter-active,
 .layout-leave-active {
-  transition: opacity 0.15s ease;
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .layout-enter-from,
 .layout-leave-to {
   opacity: 0;
+  filter: blur(8px);
 }
 
-/* ─── Scroll animations ─────────────────────────────────────── */
+/* ─── Scroll animations (Antigravity Style) ─────────────────── */
 .scroll-animate {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(32px) scale(0.98);
+  filter: blur(12px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), 
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), 
+              filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
 }
 .scroll-animate.scroll-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
+
+/* Utilities for staggered animations */
+.scroll-animate.delay-75 { transition-delay: 0.075s; }
 .scroll-animate.delay-100 { transition-delay: 0.1s; }
+.scroll-animate.delay-150 { transition-delay: 0.15s; }
 .scroll-animate.delay-200 { transition-delay: 0.2s; }
 .scroll-animate.delay-300 { transition-delay: 0.3s; }
 .scroll-animate.delay-400 { transition-delay: 0.4s; }
+.scroll-animate.delay-500 { transition-delay: 0.5s; }
+.scroll-animate.delay-600 { transition-delay: 0.6s; }
+.scroll-animate.delay-700 { transition-delay: 0.7s; }
+.scroll-animate.delay-800 { transition-delay: 0.8s; }
+.scroll-animate.delay-1000 { transition-delay: 1.0s; }

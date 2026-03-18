@@ -8,6 +8,9 @@ export interface Project {
   challenge: string
   solution: string
   results: string[]
+  heroImage?: string
+  beforeImage?: string
+  afterImage?: string
 }
 
 const projects: Project[] = [
@@ -41,7 +44,10 @@ const projects: Project[] = [
       'Appeared in local search results within 2 weeks',
       'Clean design that matches their brand aesthetic',
       'Delivered in 3 days'
-    ]
+    ],
+    heroImage: '/portfolio/oak-street-hero.png',
+    beforeImage: '/portfolio/oak-street-before.png',
+    afterImage: '/portfolio/oak-street-hero.png'
   },
   {
     slug: 'bella-cucina',

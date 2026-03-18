@@ -25,13 +25,21 @@
       </div>
     </section>
 
-    <!-- Hero image placeholder -->
+    <!-- Hero image -->
     <section class="bg-base-200 px-6">
       <div class="max-w-4xl mx-auto -mt-8">
-        <div class="rounded-xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-base-300 h-64 sm:h-80 flex items-center justify-center shadow-lg">
-          <div class="text-center text-base-content/20 space-y-3">
-            <Monitor :size="64" class="mx-auto" />
-            <p class="text-sm">{{ $t('caseStudy.screenshot') }}</p>
+        <div class="rounded-xl border border-base-300 h-64 sm:h-80 overflow-hidden shadow-lg">
+          <img
+            v-if="project.heroImage"
+            :src="project.heroImage"
+            :alt="project.name"
+            class="w-full h-full object-cover object-top"
+          >
+          <div v-else class="w-full h-full bg-linear-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
+            <div class="text-center text-base-content/20 space-y-3">
+              <Monitor :size="64" class="mx-auto" />
+              <p class="text-sm">{{ $t('caseStudy.screenshot') }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -50,7 +58,10 @@
         </div>
 
         <!-- Before / After -->
-        <PortfolioBeforeAfter />
+        <PortfolioBeforeAfter
+          :before-image="project.beforeImage"
+          :after-image="project.afterImage"
+        />
 
         <!-- Solution -->
         <div class="space-y-4">
